@@ -82,14 +82,36 @@ class GeometriaTest {
 	void testAreatrapecio() {
 		double out = geo.areatrapecio(10, 5, 3);
 		double res = 37.5;
-		double delta = 0.001;
-		assertEquals(res, out,delta);
+		assertEquals(res, out);
 	}
 
 	@Test
 	void testFigura() {
 		String out = geo.figura(4);
 		assertEquals(out, "Rectangulo");
+		
+
+		String expcu = "cuadrado";
+		assertEquals(expcu, geo.figura(1));
+
+		String expci = "Circulo";
+		assertEquals(expci, geo.figura(2));
+
+		String nombretri = "Triangulo";
+		assertEquals(geo.figura(3), nombretri);
+
+		String nombrepe = "Pentagono";
+		assertEquals(geo.figura(5), nombrepe);
+
+		String nombrero = "Rombo";
+		assertEquals(geo.figura(6), nombrero);
+
+		String nombrerom = "Romboide";
+		assertEquals(geo.figura(7), nombrerom);
+
+		String nombretrp = "Trapecio";
+		assertEquals(geo.figura(8), nombretrp);
+
 	}
 
 	@Test
@@ -117,39 +139,11 @@ class GeometriaTest {
 
 	@Test
 	void testSetNom() {
-
-		String nombre = "Tetraedro";
-		geo.setNom("Tetraedro");
-		assertEquals(geo.getNom(), nombre);
-
-		nombre = "cuadrado";
-		geo.setNom("cuadrado");
-		assertEquals(geo.getNom(), nombre);
-
-		nombre = "Circulo";
-		geo.setNom("Circulo");
-		assertEquals(geo.getNom(), nombre);
-
-		nombre = "Triangulo";
-		geo.setNom("Triangulo");
-		assertEquals(geo.getNom(), nombre);
-
-		nombre = "Pentagono";
-		geo.setNom("Pentagono");
-		assertEquals(geo.getNom(), nombre);
-
-		nombre = "Rombo";
-		geo.setNom("Rombo");
-		assertEquals(geo.getNom(), nombre);
-
-		nombre = "Romboide";
-		geo.setNom("Romboide");
-		assertEquals(geo.getNom(), nombre);
-
-		nombre = "Trapecio";
-		geo.setNom("Trapecio");
-		assertEquals(geo.getNom(), nombre);
-
+		String exp = "Tetraedro";
+		geo.setNom(exp);
+		String out = geo.getNom();
+		assertEquals(out, exp);
+		
 	}
 
 	@SuppressWarnings("deprecation")
@@ -163,7 +157,7 @@ class GeometriaTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	void testSetArea() {
-	
+
 		int exp = 23;
 		geo.setArea(exp);
 		double out = geo.getArea();
